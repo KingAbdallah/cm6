@@ -1,1 +1,265 @@
-https://is.gd/codemirror_js
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- JS CodeMirror -->
+<!-- JS CodeMirror | Main  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.js" integrity="sha512-8RnEqURPUc5aqFEN04aQEiPlSAdE0jlFS/9iGgUyNtwFnSKCXhmB6ZTNl7LnDtDWKabJIASzXrzD0K+LYexU9g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- JS CodeMirror | Hints  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/html-hint.min.js" integrity="sha512-oxBKDzXElkyh3mQC/bKA/se1Stg1Q6fm7jz7PPY2kL01jRHQ64IwjpZVsuZojcaj5g8eKSMY9UJamtB1QR7Dmw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/css-hint.min.js" integrity="sha512-1BD3lo262s+DtDFoeD8+ssEL1zVJU8SHWWMtUyxfLqMV/jQDEnyQlS/CL3mD1kkLSv2hhYq1sdcA/zAPDz4JVA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/javascript-hint.min.js" integrity="sha512-omIxBxPdObb7b3giwJtPBiB86Mey/ds7qyKFcRiaLQgDxoSR+UgCYEFO7jRZzPOCZAICabGCraEhOSa71U1zFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<!-- JS CodeMirror | Lints  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/lint/css-lint.min.js" integrity="sha512-uvP6cZWrrQc4b+sluLwMcjWPDC/2oJMGAmCGJYqYbC/uBR74PAd/GRZ4nMoTfczKoRZOHkUbwHHugQBYVQQM4A==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/lint/html-lint.min.js" integrity="sha512-+1cU98RF1+fbQdVuO2Hph3BxSIz3kr25QnZkgk9dYXdLlhAJ8u+75mfy5UKMBRxlRWYe+MewgVcFTHrYl4Xi8g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/lint/javascript-lint.min.js" integrity="sha512-8kwyIAPFqkeXy+ZFifnFBF57n5pSsXBBWuy9ME1hPCku0evC+UFNnWZOJlITFe/OMSxGi/oWaccjZ07L6YXzJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/lint/json-lint.min.js" integrity="sha512-40xVcCik6TlUiZadnRc6ZM0BN65s7F+C3K7eBqGRf8dmjKApjzoiT/GB1GJmdICOZbXjJCiTBbVlsIvFs8A/+Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://codemirror.net/lib/codemirror.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/lint/lint.min.js" integrity="sha512-fzIkwQa9H8rjoDzpZ9sMOYhgaYwh9nKALWbE1m+7wpiry9PN5OyNcZ9LySotjEysolveRyv2C9pVJ+DbEuKtmQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<!-- JS CodeMirror | Modes  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/mode/loadmode.min.js" integrity="sha512-h/UMHULKoaDZbSQFARIySNdVmLtXWpXjMoFoinjVrSPSj+oLtVbS9B0/UqyM9wAj2Lwhc72EleGOShBP4XK8CA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/mode/overlay.min.js" integrity="sha512-SNwKDMYQwymOPjleeZy1xbdlK1PAjJ6EAplvx0CvNFJbW/pF5ec3h0mAdDl1yySq9r3Qont4STM4W3le7FTm9w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/css/css.min.js" integrity="sha512-rQImvJlBa8MV1Tl1SXR5zD2bWfmgCEIzTieFegGg89AAt7j/NBEe50M5CqYQJnRwtkjKMmuYgHBqtD1Ubbk5ww==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/htmlmixed/htmlmixed.min.js" integrity="sha512-HN6cn6mIWeFJFwRN9yetDAMSh+AK9myHF1X9GlSlKmThaat65342Yw8wL7ITuaJnPioG0SYG09gy0qd5+s777w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/javascript/javascript.min.js" integrity="sha512-I6CdJdruzGtvDyvdO4YsiAq+pkWf2efgd1ZUSK2FnM/u2VuRASPC7GowWQrWyjxCZn6CT89s3ddGI+be0Ak9Fg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/shell/shell.min.js" integrity="sha512-HoC6JXgjHHevWAYqww37Gfu2c1G7SxAOv42wOakjR8csbTUfTB7OhVzSJ95LL62nII0RCyImp+7nR9zGmJ1wRQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<!-- JS CodeMirror | RunModes  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/runmode/colorize.min.js" integrity="sha512-KyiBT1ypnd1OYmXt5tfljpsucuh9iscvA9soQDkKAdbwZfAk+RfPyxNd9E6tiuJmF9ZhPiDDXzdRkp5ccp525w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+<!-- JS CodeMirror | Searches  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/search/match-highlighter.min.js" integrity="sha512-94h/nzerPpLt9vsOyZmNNemwyUESYD/Tnuem6b67+RQMETNFhH8pTCHLDZkGNhzEbmKO0AidJgS0aYH1mH9YfA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/search/search.min.js" integrity="sha512-Mw3RqCUHTyvN3iSp5TSs731TiLqnKrxzyy2UVZv3+tJa524Rj7pBC7Ivv3ka2oDnkQwLOMHNDKU5nMJ16YRgrA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
+
+            <!-- CM CSS Style -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.min.css" integrity="sha512-uf06llspW44/LZpHzHT6qBOIVODjWtv4MxCricRxkzvopAlSWnTf6hpZTFxuuZcuNE9CBQhqE0Seu1CoRk84nQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/hint/show-hint.min.css" integrity="sha512-OmcLQEy8iGiD7PSm85s06dnR7G7C9C0VqahIPAj/KHk5RpOCmnC6R2ob1oK4/uwYhWa9BF1GC6tzxsC8TIx7Jg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/addon/lint/lint.min.css" integrity="sha512-jP1+o6s94WQS9boYeDP3Azh8ihI5BxGgBZNjkABhx05MqH5WuDzfzSnoPxGxVzWi/gxxVHZHvWkdRM6SMy5B0Q==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+  <style>
+    .CodeMirror {
+      border: 1px solid black;
+      height: auto;
+      min-height: 100px;
+    }
+
+    .CodeMirror-activeline-background {
+      background: lightgray;
+    }
+  </style>
+  <style>
+    #splash {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 3em;
+      opacity: 1;
+      transition: opacity 1s ease-out;
+    }
+
+    #splash.hide {
+      opacity: 0;
+    }
+  </style>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      height: 100vh;
+      margin: 0;
+      padding: 10px;
+    }
+
+    .header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .text-area {
+      flex: 1;
+      resize: none;
+      border: 1px solid black;
+      padding: 10px;
+    }
+
+    .footer {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+
+    @media (min-width: 600px) {
+      .container {
+        flex-direction: row;
+        height: auto;
+        padding: 20px;
+      }
+
+      .header {
+        width: 20%;
+        margin-right: 20px;
+      }
+
+      .text-area {
+        width: 60%;
+        height: 500px;
+        margin-right: 20px;
+      }
+
+      .footer {
+        width: 20%;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div id="splash">Loading...</div>
+  <script>
+    const splash = document.getElementById("splash");
+    const scripts = document.querySelectorAll("script[src]");
+    const links = document.querySelectorAll("link[rel=stylesheet]");
+    const total = scripts.length + links.length;
+    let loaded = 0;
+
+    function updateSplash() {
+      splash.value += `${splash.value} \n Scripts : ${scripts.length} \n CSS : ${links.length} \n  Total : ${total}`;
+      loaded++;
+      let percent = Math.round(loaded / total * 100);
+      splash.textContent += `\n ${percent} %`;
+      if (loaded === total) {
+        splash.classList.add("hide");
+      }
+    }
+
+    for (let script of scripts) {
+      script.addEventListener("load", function() {
+        updateSplash();
+      });
+    }
+
+    for (let link of links) {
+      link.addEventListener("load", function() {
+        updateSplash();
+      });
+    }
+  </script>
+
+  <div class="container">
+    <div class="header">
+      <h1>Web App</h1>
+      <p>Create and download text files</p>
+    </div>
+  <div id="text-area"></div>
+  <button id="detect-button">Detect Language</button>
+  <script>
+    const textArea = CodeMirror(document.getElementById("text-area"), {
+      lineNumbers: true,
+      mode: "htmlmixed",
+      styleActiveLine: true
+    });
+
+    const detectButton = document.getElementById("detect-button");
+    detectButton.addEventListener("click", function() {
+      const text = textArea.getValue();
+      if (text) {
+        let lang = "text";
+        if (text.startsWith("<!DOCTYPE html>") || text.startsWith("<html>")) {
+          lang = "htmlmixed";
+        } else if (text.startsWith("<?php")) {
+          lang = "php";
+        } else if (text.startsWith("#!/bin/bash")) {
+          lang = "shell";
+        } else if (text.includes("function") || text.includes("var") || text.includes("let") || text.includes("const")) {
+          lang = "javascript";
+        }
+        textArea.setOption("mode", lang);
+
+        alert("Language detected: " + lang);
+        
+      } else {
+        alert("Please enter some text first!");
+      }
+      
+    });
+    
+  </script>
+ 
+    <div class="footer">
+      <label for="file-name">File name:</label>
+      <input type="text" id="file-name" value="my-file">
+      <label for="file-extension">File extension:</label>
+      <select id="file-extension">
+        <option value=".txt">TXT</option>
+        <option value=".html">HTML</option>
+        <option value=".js">JS</option>
+        <option value=".sh">SH</option>
+      </select>
+      <button id="download-button">Download</button>
+    </div>
+  </div>
+  <script>
+    const textArea = document.getElementById("text-area");
+    const fileName = document.getElementById("file-name");
+    const fileExtension = document.getElementById("file-extension");
+    const downloadButton = document.getElementById("download-button");
+
+    downloadButton.addEventListener("click", function() {
+      const text = textArea.value;
+      if (text) {
+        const blob = new Blob([text], {type: "text/plain"});
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = fileName.value + fileExtension.value;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        URL.revokeObjectURL(url);
+        alert("File downloaded successfully!");
+        
+      } else {
+        alert("Please enter some text first!"); 
+      }
+    });
+  </script>
+</body>
+</html>
